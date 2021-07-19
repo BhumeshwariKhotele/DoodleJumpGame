@@ -49,10 +49,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
          
-        if(transform.position.y<-5.0f)
+        if(transform.position.y<localPlayer.yMin)
         {
             Destroy(this.gameObject);
             SceneManager.LoadScene(2);
+            scorer.SaveScore();
+
         }
 
     }
@@ -70,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Tile")
         {
-           // Debug.Log("tiles collision"); 
             Grounded = true;
         }
 

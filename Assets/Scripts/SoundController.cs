@@ -24,12 +24,5 @@ public class SoundController : MonoBehaviour
         BackGroundAudio.Play();
     }
 
-    private void Update()
-    {
-       
-    }
-
- 
-   
 
 }

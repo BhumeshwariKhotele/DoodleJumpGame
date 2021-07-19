@@ -4,26 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+
 public class Score : MonoBehaviour
 {
     public int score=0;
     public Text scoreText;
-    Showscore showscore;
+    
 
-   
-
-    public void Start()
-    {
-        //showscore = GameObject.Find("ShowScore").GetComponent<Showscore>();
-    }
     public void Increment(int value)
     {
         score += value;
         scoreText.text = "Score :" + score;
     }
-
-    public void Show()
+  
+    public void SaveScore()
     {
-        //showscore.displayTheScore(score);
+        Debug.Log(score);
+        PlayerPrefs.SetInt("PlayerScore", score);
     }
 }

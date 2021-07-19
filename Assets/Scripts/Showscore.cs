@@ -7,9 +7,11 @@ using UnityEngine.UI;
 public class Showscore : MonoBehaviour
 {
     public Text FinalScore;
-
-    public void  displayTheScore(int finalScore)
+    int finalScore;
+  
+    void  Start()
     {
+        finalScore = PlayerPrefs.GetInt("PlayerScore");
         FinalScore.text = "Score: " + finalScore;
     }
 }
