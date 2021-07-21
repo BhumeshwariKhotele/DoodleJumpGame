@@ -7,6 +7,8 @@ TagManager:
   - Tile
   - Undefined
   - Coin
+  - RedCoin
+  - GreenCoin
   layers:
   - Default
   - TransparentFX

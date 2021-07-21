@@ -576,8 +576,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70fd51c20c8a0f4c92519e21252a6fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerName: Bhoomi
-  PlayerAge: 24
+  PlayerName: XYZ
+  PlayerAge: 20
   PlayerScore: 0
   playerName: {fileID: 590770884}
   playerAge: {fileID: 307164506}

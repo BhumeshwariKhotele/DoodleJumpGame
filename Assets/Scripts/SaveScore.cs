@@ -25,6 +25,7 @@ public class SaveScore : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.S))
         {
             SavePlayerData();
+            getPlayerData();
         }
     }
 

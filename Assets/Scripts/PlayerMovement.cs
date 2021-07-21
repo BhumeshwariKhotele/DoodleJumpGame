@@ -22,11 +22,14 @@ public class PlayerMovement : MonoBehaviour
         PlayerRB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         PlayerSprite = GetComponent<SpriteRenderer>();
-        scorer =GameObject.Find("ScoreDisplay").GetComponent<Score>();
+      scorer =GameObject.Find("ScoreDisplay").GetComponent<Score>();
     }
 
     // Update is called once per frame
-    void Update()
+  
+
+
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -48,22 +51,17 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-         
-        if(transform.position.y<localPlayer.yMin)
+
+        if (transform.position.y < localPlayer.yMin)
         {
             Destroy(this.gameObject);
             SceneManager.LoadScene(2);
-            scorer.SaveScore();
+          scorer.SaveScore();
 
         }
-
-    }
-
-
-    private void FixedUpdate()
-    {
+     
         float horizontal = Input.GetAxis("Horizontal");
-        PlayerRB.velocity = new Vector2(horizontal, 0) * playerSpeed;
+        PlayerRB.velocity = new Vector2(horizontal * playerSpeed, PlayerRB.velocity.y) ;
         PlayerRB.position = new Vector2(Mathf.Clamp(PlayerRB.position.x, localPlayer.xMin, localPlayer.xMax), Mathf.Clamp(PlayerRB.position.y, localPlayer.yMin, localPlayer.yMax));
 
     }
@@ -95,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         Grounded = false;
-        PlayerRB.AddForce(transform.up * jumpSpeed);
+        PlayerRB.velocity = new Vector2(0, jumpSpeed);
     }
 }
 

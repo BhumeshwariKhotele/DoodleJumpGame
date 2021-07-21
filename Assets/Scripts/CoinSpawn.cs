@@ -21,6 +21,8 @@ public class CoinSpawn : MonoBehaviour
                 coin.transform.position = transform.position + new Vector3(Random.Range(-2.5f, 2.5f), Random.Range(-1.0f, 3.5f), 0);
                 coin.SetActive(true);
             }
+
+
         }
     }
 
